@@ -39,11 +39,17 @@ def score(s):
         if c in freq:
             scores += freq[c]
     return scores
+#利用前定义的字母频率得分表，对字符串s中各字符得分累加，求得字符串终总分scores并返回
 
 def break_sb_xor(b1):
     max_score = 0
-
-    for i in range(256):
+'''
+首先，遍历ASCII表中256个字符，利用#2的异或函数xor(b1,b2)；
+然后，分别对密文按位进行异或，得到各组字符串plaintext;
+再求得每组plaintext的计分函数score(s)值scores；
+最后比较各组scores值，取最大得分，对应的字符即为key.
+'''
+        for i in range(256):
         b2 = [i] * len(b1)
         plaintext = bytes(xor(b1, b2))
         pscore = score(plaintext)
