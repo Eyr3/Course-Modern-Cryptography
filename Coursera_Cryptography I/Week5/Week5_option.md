@@ -45,5 +45,5 @@ ENC加密函数；DEC解密函数。 \
 1. 多用函数（直接写一大串下来-ugly，不elegant）
 2. 主函数入口
 
-if \_\_name__ == "\_\_main__":  
-    self_test()
+    if \_\_name__ == "\_\_main__":  
+        self_test()
